@@ -1,0 +1,7 @@
+.idea
+*.exe
+netbug1/img
+curl/*
+*.html
+*.a
+*.dll
