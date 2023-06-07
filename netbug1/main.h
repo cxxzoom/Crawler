@@ -10,12 +10,13 @@
 #include <regex>
 #include <fstream>
 #include <random>
+#include <thread>
 
 using namespace std;
 
 #endif //PROBLEM_CURLDEMO_H
 
-int Request();
+int Request(const char*, const char*);
 // hava an curl request
 CURLcode CURLRequest(const char *url, FILE *file);
 //write curl content to file
@@ -31,3 +32,9 @@ void Filter(std::vector<std::string> &, std::vector<std::string>);
 void ExtractContent(const char *, std::string &);
 // get random int
 int GetRandom();
+
+void ThreadGet(const std::vector<std::string>& ,const std::string& ,int );
+
+void ThreadGets(const char *);
+// download single img for thread
+void DownloadImg2(const std::string&);
