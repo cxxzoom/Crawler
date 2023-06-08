@@ -17,6 +17,18 @@ int main()
     return 0;
 }
 ```
+## 字符串
+1. const char* str = "123";
+2. std::string str = "iioio";
+3. std::string 转 char：str.c_str();
+
+## type convert 类型转换
+
+std::string => char .c_str();
+str.length() => int static_cast<int>(str.length()) // consider: length maybe out of ange of int
+
+
+
 
 ## enum
 可以在哪里定义？
@@ -70,6 +82,21 @@ int main()
     int* ptr = nullptr;
     ptr = arr;
     cout << *(ptr + 2) << endl; // 这里输出3
+}
+```
+## 参数
+```c++
+#inlcude <iostream>
+using namespace std;
+void Test(const std::string&);
+int main()
+{
+    
+}
+
+void Test(const std::string& str){
+    std::string s1 = "s1";
+    str = s1;// error
 }
 ```
 

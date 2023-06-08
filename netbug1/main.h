@@ -11,6 +11,7 @@
 #include <fstream>
 #include <random>
 #include <thread>
+#include <cerrno>
 
 using namespace std;
 
@@ -38,3 +39,11 @@ void ThreadGet(const std::vector<std::string>& ,const std::string& ,int );
 void ThreadGets(const char *);
 // download single img for thread
 void DownloadImg2(const std::string&);
+// string replace
+void StrReplace(std::string &str);
+//
+void FilterHyperLink(std::vector<std::string>& hyperlink, std::vector<std::string>& img);
+// find suffix from path.
+void GetSuffix(const std::string& path, std::string& suffix, const std::string find, const std::string relation);
+
+bool FilterMatch(std::string& match);
