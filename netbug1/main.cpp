@@ -124,8 +124,6 @@ void ThreadGets(const char *file_name) {
 //        threads.emplace_back(DownloadImg2, v);
 //    }
 
-
-
     // 创建线程去fetch 这些超连接
     for (const std::string &v: hyperlinks) {
         cout << v << endl;
@@ -197,7 +195,7 @@ size_t ParseHyperLink(const char *file_names, std::vector<std::string> &vector) 
     StrReplace(file_name);
     std::string line;
     if (!file.is_open()) {
-        cout << "fail to open file in ParseHyperlink: " << file_name << std::strerror(errno) << endl;
+        cout << "ParseHyperlink: " << file_name << "\t" << std::strerror(errno) << endl;
         //return -1;
     }
 
@@ -246,7 +244,7 @@ void FilterHyperLink(std::vector<std::string> &hyperlink, std::vector<std::strin
         std::string relation = "?";
         GetSuffix(*iter, suffix, find, relation);
         if (suffix == "jpg" || suffix == "png" || suffix == "pdf" || suffix == "ico" || suffix == "gif" ||
-            suffix.find_last_of("<") != std::string::npos) {
+            suffix.find_last_of('<') != std::string::npos) {
             // 删除当前迭代器指向的元素，并返回下一个有效的迭代器
             img.push_back(*iter);
             iter = hyperlink.erase(iter);
@@ -278,7 +276,7 @@ bool FilterMatch(std::string &match) {
     return true;
 }
 
-void GetSuffix(const std::string &path, std::string &suffix, const std::string find, const std::string relation) {
+void GetSuffix(const std::string &path, std::string &suffix, const std::string& find, const std::string& relation) {
     auto pos = path.find_last_of(find);
     auto leafs = path.substr(pos + 1);
 
@@ -288,6 +286,5 @@ void GetSuffix(const std::string &path, std::string &suffix, const std::string f
     } else {
         suffix = leafs;
     }
-    return;
 }
 

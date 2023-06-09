@@ -44,6 +44,6 @@ void StrReplace(std::string &str);
 //
 void FilterHyperLink(std::vector<std::string>& hyperlink, std::vector<std::string>& img);
 // find suffix from path.
-void GetSuffix(const std::string& path, std::string& suffix, const std::string find, const std::string relation);
+void GetSuffix(const std::string& path, std::string& suffix, const std::string& find, const std::string& relation);
 
 bool FilterMatch(std::string& match);
