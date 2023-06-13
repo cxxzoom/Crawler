@@ -5,3 +5,4 @@ curl/*
 *.html
 *.a
 *.dll
+cmake/cmake1
