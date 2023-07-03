@@ -2,6 +2,7 @@
 // Created by doff on 2023/5/21.
 //
 
+#include <cstring>
 #include "main.h"
 
 using namespace std;

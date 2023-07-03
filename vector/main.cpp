@@ -4,14 +4,23 @@
 
 #include <iostream>
 #include <vector>
+#include <list>
 using namespace std;
 
 vector<int> test();
 int main()
 {
     auto res = test();
-    for(auto n : res){
-        cout << n << endl;
+    cout << res.size() << res.empty() <<  endl;
+    res.erase(res.begin() + 2);
+    //res.clear();
+    //res.erase(res.begin(), res.end());
+//    for(auto n : res){
+//        cout << n << endl;
+//    }
+    res.insert(res.begin(),9);
+    for (int i = 0; i < res.size();++i) {
+        cout << i << "::::" << res[i] << endl;
     }
 
     return 0;
@@ -19,5 +28,6 @@ int main()
 
 vector<int> test()
 {
-    return {-1,-1};
+    return {1,2,3,4,5};
 }
+

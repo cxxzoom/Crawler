@@ -17,8 +17,6 @@ using namespace std;
 
 #endif //PROBLEM_CURLDEMO_H
 
-int Request(const char*, const char*);
-// hava an curl request
 CURLcode CURLRequest(const char *url, FILE *file);
 //write curl content to file
 size_t Write2File(char *data, size_t size, size_t nmemb, FILE *file);
@@ -47,3 +45,5 @@ void FilterHyperLink(std::vector<std::string>& hyperlink, std::vector<std::strin
 void GetSuffix(const std::string& path, std::string& suffix, const std::string& find, const std::string& relation);
 
 bool FilterMatch(std::string& match);
+
+int Request(std::string);
