@@ -43,6 +43,7 @@ void StrReplace(std::string &str) {
     }
 
     str = str.substr(min(0,static_cast<int>(str.length() - 10)));
+    str = str.substr(min(0,*str.end()-10));
 }
 
 int GetRandom(std::vector<int>& vector2) {
