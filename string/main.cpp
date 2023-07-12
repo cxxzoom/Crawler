@@ -2,6 +2,7 @@
 // Created by Administrator on 2023/7/6.
 //
 
+#include <algorithm>
 #include "main.h"
 
 void operation()
@@ -12,6 +13,9 @@ void operation()
 
     std::string sub = s.substr(0,s.length() - 14);
     cout << sub << endl;
+
+    auto fi = s.find_first_of('y');
+    cout << fi << endl;
 }
 
 int main()
